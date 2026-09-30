@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SSezireturns Next.js
+
+Modern Next.js migration of the SSezireturns logistics website.
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Forms:** Supabase (contact/newsletter storage)
+- **Deployment:** Vercel
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout with Header/Footer
+│   ├── page.tsx            # Homepage
+│   ├── about/page.tsx
+│   ├── services/page.tsx
+│   ├── contact/page.tsx    # Functional contact form
+│   ├── blog/page.tsx
+│   ├── blog/[slug]/page.tsx
+│   ├── request-a-quote/page.tsx
+│   ├── workprocess/page.tsx
+│   ├── our-team/page.tsx
+│   ├── faqs/page.tsx
+│   ├── trackyourparcel/page.tsx
+│   ├── career/page.tsx
+│   ├── comingsoon/page.tsx
+│   ├── login/page.tsx
+│   ├── register/page.tsx
+│   ├── term-conditions/page.tsx
+│   ├── sitemap.ts
+│   └── api/contact/route.ts
+├── components/
+│   └── layout/
+│       ├── Header.tsx
+│       └── Footer.tsx
+└── lib/
+    └── supabase.ts
+```
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. Set up environment variables:
+   ```bash
+   cp .env.example .env.local
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Update `.env.local` with your actual values:
+   - `NEXT_PUBLIC_APP_URL`
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `SUPABASE_SERVICE_ROLE_KEY`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+5. Build for production:
+   ```bash
+   npm run build
+   ```
 
-## Learn More
+## Deployment to Vercel
 
-To learn more about Next.js, take a look at the following resources:
+1. Push this repository to GitHub/GitLab/Bitbucket.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Import the project in Vercel.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Add the following environment variables in Vercel:
+   - `NEXT_PUBLIC_APP_URL`
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `SUPABASE_SERVICE_ROLE_KEY`
 
-## Deploy on Vercel
+4. Deploy.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## URL Preservation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Old URLs are preserved via middleware and Vercel rewrites:
+
+| Old URL | New URL |
+|---------|---------|
+| `/index.php` | `/` |
+| `/about.php` | `/about` |
+| `/services.php` | `/services` |
+| `/contact.php` | `/contact` |
+| `/blog.html` | `/blog` |
+| `/request-a-quote.html` | `/request-a-quote` |
+| ... | ... |
+
+## Database
+
+- **Original PHP site:** No database
+- **Buzzlab Laravel app:** Remains on existing MySQL hosting at `/buzzlab/`
+- **New Next.js site:** Uses Supabase only for contact form submissions
+
+## Notes
+
+- The original PHP project at `C:\Users\ankii\Desktop\ez\` is untouched.
+- All assets have been migrated to `public/assets/`.
+- The Buzzlab Laravel admin panel is kept separate and unchanged.

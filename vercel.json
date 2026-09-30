@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    { "source": "/index.php", "destination": "/", "statusCode": 301 },
+    { "source": "/about.php", "destination": "/about", "statusCode": 301 },
+    { "source": "/services.php", "destination": "/services", "statusCode": 301 },
+    { "source": "/contact.php", "destination": "/contact", "statusCode": 301 },
+    { "source": "/blog.html", "destination": "/blog", "statusCode": 301 },
+    { "source": "/blog-sing.html", "destination": "/blog", "statusCode": 301 },
+    { "source": "/blog-single.html", "destination": "/blog-single", "statusCode": 301 },
+    { "source": "/request-a-quote.html", "destination": "/request-a-quote", "statusCode": 301 },
+    { "source": "/workprocess.html", "destination": "/workprocess", "statusCode": 301 },
+    { "source": "/our-team.html", "destination": "/our-team", "statusCode": 301 },
+    { "source": "/faqs.html", "destination": "/faqs", "statusCode": 301 },
+    { "source": "/trackyourparcel.html", "destination": "/trackyourparcel", "statusCode": 301 },
+    { "source": "/career.html", "destination": "/career", "statusCode": 301 },
+    { "source": "/comingsoon.html", "destination": "/comingsoon", "statusCode": 301 },
+    { "source": "/login.html", "destination": "/login", "statusCode": 301 },
+    { "source": "/register.html", "destination": "/register", "statusCode": 301 },
+    { "source": "/term-conditions.html", "destination": "/term-conditions", "statusCode": 301 },
+    { "source": "/service-detail.html", "destination": "/service-detail", "statusCode": 301 },
+    { "source": "/newsletter.html", "destination": "/newsletter", "statusCode": 301 },
+    { "source": "/404.html", "destination": "/not-found", "statusCode": 301 }
+  ]
+}

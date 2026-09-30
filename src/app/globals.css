@@ -1,15 +1,23 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+  --font-sans: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   --font-mono: var(--font-geist-mono);
+
+  --color-brand-1: #0d6efd;
+  --color-brand-2: #fd7e14;
+  --color-white: #ffffff;
+  --color-grey-900: #212529;
+  --color-grey-700: #495057;
+  --color-grey-500: #adb5bd;
+  --color-grey-400: #ced4da;
+  --color-grey-300: #dee2e6;
+  --color-grey-100: #f8f9fa;
+  --color-bg-grey-900: #212529;
+  --color-bg-2: #f8f9fa;
+  --color-bg-map: #e9ecef;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +30,194 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Custom Services Slider Carousel */
+.custom-services-slider {
+  position: relative;
+  z-index: 10;
+  margin-top: -110px;
+  padding: 0;
+  text-align: center;
+}
+
+.custom-services-slider .slider-viewport {
+  overflow: hidden;
+  width: 100%;
+  padding: 20px 0 10px 0;
+  user-select: none;
+}
+
+.custom-services-slider .slider-track {
+  display: flex;
+  align-items: stretch;
+}
+
+.custom-services-slider .slider-item {
+  box-sizing: border-box;
+}
+
+/* Slide Cards matching the screenshot */
+.card-offer-slide {
+  background-color: #ffffff;
+  border-top: 1px solid #E8E9ED;
+  border-left: 1px solid #E8E9ED;
+  border-right: 1px solid #E8E9ED;
+  border-bottom: 6px solid #FEC201;
+  border-radius: 4px;
+  padding: 35px 24px 30px 24px;
+  margin-bottom: 0;
+  box-shadow: 0px 10px 30px rgba(1, 9, 20, 0.06);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.card-offer-slide:hover {
+  box-shadow: 0px 16px 42px rgba(1, 9, 20, 0.12);
+  border-bottom-color: #034460;
+  transform: translateY(-8px);
+}
+
+.card-offer-slide .card-image-box {
+  margin-bottom: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-offer-slide .card-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: #FFF3CD;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card-offer-slide:hover .card-icon-badge {
+  transform: scale(1.08);
+}
+
+.card-offer-slide .card-icon-badge img {
+  max-height: 44px;
+  max-width: 44px;
+  object-fit: contain;
+}
+
+.card-offer-slide .card-info h5 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #034460;
+  margin-bottom: 14px;
+}
+
+.card-offer-slide .card-info p {
+  font-size: 13.5px;
+  line-height: 22px;
+  color: #495057;
+  margin-bottom: 20px;
+}
+
+.card-offer-slide .box-button-offer {
+  display: block;
+}
+
+.card-offer-slide .btn-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #034460;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.card-offer-slide:hover .btn-link {
+  color: #FEC201;
+  gap: 10px;
+}
+
+/* Floating Navigation Arrows */
+.slider-arrow-btn {
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #E8E9ED;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.25s ease;
+  color: #034460;
+}
+
+.slider-arrow-prev {
+  left: -20px;
+}
+
+.slider-arrow-next {
+  right: -20px;
+}
+
+.slider-arrow-btn:hover {
+  background: #FEC201;
+  color: #034460;
+  box-shadow: 0 6px 20px rgba(254, 194, 1, 0.4);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Pagination Dots */
+.slider-pagination-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.pagination-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: #adb5bd;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.pagination-dot.active {
+  background-color: #FEC201;
+  width: 24px;
+  border-radius: 10px;
+}
+
+.pagination-dot:hover {
+  background-color: #FEC201;
+}
+
+@media (max-width: 991px) {
+  .slider-arrow-prev {
+    left: 2px;
+  }
+  .slider-arrow-next {
+    right: 2px;
+  }
+  .custom-services-slider {
+    margin-top: -60px;
+  }
 }

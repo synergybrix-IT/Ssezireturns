@@ -7,7 +7,7 @@ Modern Next.js migration of the SSezireturns logistics website.
 - **Framework:** Next.js 16 (App Router)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS v4
-- **Forms:** Supabase (contact/newsletter storage)
+- **Forms:** Resend (contact form email)
 - **Deployment:** Vercel
 
 ## Project Structure
@@ -38,8 +38,6 @@ src/
 │   └── layout/
 │       ├── Header.tsx
 │       └── Footer.tsx
-└── lib/
-    └── supabase.ts
 ```
 
 ## Getting Started
@@ -56,9 +54,9 @@ src/
 
 3. Update `.env.local` with your actual values:
    - `NEXT_PUBLIC_APP_URL`
-   - `NEXT_PUBLIC_SUPABASE_URL`
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-   - `SUPABASE_SERVICE_ROLE_KEY`
+   - `RESEND_API_KEY`
+   - `EMAIL_FROM`
+   - `EMAIL_TO`
 
 4. Run the development server:
    ```bash
@@ -78,9 +76,9 @@ src/
 
 3. Add the following environment variables in Vercel:
    - `NEXT_PUBLIC_APP_URL`
-   - `NEXT_PUBLIC_SUPABASE_URL`
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-   - `SUPABASE_SERVICE_ROLE_KEY`
+   - `RESEND_API_KEY`
+   - `EMAIL_FROM`
+   - `EMAIL_TO`
 
 4. Deploy.
 
@@ -102,7 +100,7 @@ Old URLs are preserved via middleware and Vercel rewrites:
 
 - **Original PHP site:** No database
 - **Buzzlab Laravel app:** Remains on existing MySQL hosting at `/buzzlab/`
-- **New Next.js site:** Uses Supabase only for contact form submissions
+- **New Next.js site:** Sends contact form submissions through Resend; it does not require a database
 
 ## Notes
 

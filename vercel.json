@@ -1,4 +1,6 @@
 {
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
   "redirects": [
     { "source": "/index.php", "destination": "/", "statusCode": 301 },
     { "source": "/about.php", "destination": "/about", "statusCode": 301 },

@@ -57,7 +57,7 @@ export default function Footer() {
           <div className="footer-bottom">
             <div className="row align-items-center">
               <div className="col-lg-6 col-md-12 text-center text-lg-start">
-                <span className="color-grey-300 font-md">Cosmic Web Solution 2024. All right reversed.</span>
+                <span className="color-grey-300 font-md">Synergy Brix 2026. All rights reserved.</span>
               </div>
             </div>
           </div>

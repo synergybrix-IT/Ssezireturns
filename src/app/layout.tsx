@@ -47,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/assets/imgs/template/favicon.svg" type="image/svg+xml" />
         <link rel="stylesheet" href="/assets/css/vendors/normalize.css" />
         <link rel="stylesheet" href="/assets/css/vendors/bootstrap.min.css" />
         <link rel="stylesheet" href="/assets/css/vendors/uicons-regular-rounded.css" />
